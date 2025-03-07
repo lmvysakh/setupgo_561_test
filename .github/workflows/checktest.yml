@@ -19,5 +19,10 @@ jobs:
       - name: Display Go version
         run: go version
 
+      - name: Display Latest Go version
+        run: |
+          latest_go_version=$(curl -s https://go.dev/VERSION?m=text)
+          echo "Latest Go version: $latest_go_version"
+
       - name: Run Go build
         run: go build -v ./...
